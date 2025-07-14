@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Styles -->
+  <style>
+    .entity {
+      fill: #f5f5f5;
+      stroke: #333;
+      stroke-width: 2;
+    }
+    .title {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+    .attribute {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      text-anchor: start;
+    }
+    .relationship {
+      stroke: #666;
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+    .relationship-text {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      text-anchor: middle;
+      fill: #666;
+    }
+  </style>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- User Entity -->
+  <rect x="100" y="100" width="200" height="200" rx="5" ry="5" class="entity" />
+  <text x="200" y="125" class="title">User</text>
+  <line x1="100" y1="135" x2="300" y2="135" stroke="#333" stroke-width="1" />
+  <text x="110" y="155" class="attribute">_id: ObjectId</text>
+  <text x="110" y="175" class="attribute">name: String</text>
+  <text x="110" y="195" class="attribute">email: String (unique)</text>
+  <text x="110" y="215" class="attribute">password: String (hashed)</text>
+  <text x="110" y="235" class="attribute">role: String (user|admin)</text>
+  <text x="110" y="255" class="attribute">registeredAt: Date</text>
+  <text x="110" y="275" class="attribute">interviewHistory: [ObjectId]</text>
+  <text x="110" y="295" class="attribute">chatSessions: [ObjectId]</text>
+  
+  <!-- Interview Entity -->
+  <rect x="500" y="100" width="200" height="200" rx="5" ry="5" class="entity" />
+  <text x="600" y="125" class="title">Interview</text>
+  <line x1="500" y1="135" x2="700" y2="135" stroke="#333" stroke-width="1" />
+  <text x="510" y="155" class="attribute">_id: ObjectId</text>
+  <text x="510" y="175" class="attribute">userId: ObjectId (ref: User)</text>
+  <text x="510" y="195" class="attribute">stream: String</text>
+  <text x="510" y="215" class="attribute">questions: [Object]</text>
+  <text x="510" y="235" class="attribute">startedAt: Date</text>
+  <text x="510" y="255" class="attribute">endedAt: Date</text>
+  <text x="510" y="275" class="attribute">resultSummary: Object</text>
+  <text x="510" y="295" class="attribute">pdfPath: String</text>
+  
+  <!-- ChatSession Entity -->
+  <rect x="300" y="400" width="200" height="180" rx="5" ry="5" class="entity" />
+  <text x="400" y="425" class="title">ChatSession</text>
+  <line x1="300" y1="435" x2="500" y2="435" stroke="#333" stroke-width="1" />
+  <text x="310" y="455" class="attribute">_id: ObjectId</text>
+  <text x="310" y="475" class="attribute">userId: ObjectId (ref: User)</text>
+  <text x="310" y="495" class="attribute">startedAt: Date</text>
+  <text x="310" y="515" class="attribute">endedAt: Date</text>
+  <text x="310" y="535" class="attribute">messages: [Object]</text>
+  <text x="310" y="555" class="attribute">contextTags: [String]</text>
+  <text x="310" y="575" class="attribute">isActive: Boolean</text>
+  
+  <!-- Relationships -->
+  <!-- User to Interview -->
+  <path d="M 300 200 L 400 200 L 500 200" class="relationship" />
+  <text x="400" y="190" class="relationship-text">1:N</text>
+  
+  <!-- User to ChatSession -->
+  <path d="M 200 300 L 200 490 L 300 490" class="relationship" />
+  <text x="240" y="480" class="relationship-text">1:N</text>
+  
+  <!-- Background Services -->
+  <rect x="550" y="400" width="200" height="100" rx="5" ry="5" fill="#e6f7ff" stroke="#0099cc" stroke-width="2" />
+  <text x="650" y="425" class="title" fill="#0099cc">Background Services</text>
+  <line x1="550" y1="435" x2="750" y2="435" stroke="#0099cc" stroke-width="1" />
+  <text x="560" y="455" class="attribute">PDF Export Service</text>
+  <text x="560" y="475" class="attribute">Resume Analysis Worker</text>
+  <text x="560" y="495" class="attribute">Interview Scoring Worker</text>
+  
+  <!-- Service to Interview Relationship -->
+  <path d="M 650 400 L 650 350 L 600 300" class="relationship" stroke="#0099cc" />
+</svg>

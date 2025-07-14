@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="#8C52FF" />
+  
+  <!-- Stylized 'C' for Claude -->
+  <path d="M65,30c-8.3-8.3-21.7-8.3-30,0s-8.3,21.7,0,30s21.7,8.3,30,0" 
+        fill="none" stroke="white" stroke-width="8" stroke-linecap="round" />
+  
+  <!-- Dot for the 'i' in AI -->
+  <circle cx="70" cy="35" r="4" fill="white" />
+</svg>
