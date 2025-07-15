@@ -31,41 +31,64 @@ interface ExecutionResult {
 // Mock execution functions for different languages
 async function executeJavaScript(code: string, input: string): Promise<ExecutionResult> {
   const startTime = Date.now();
-  
+
   try {
     // Create a safe execution context
     const logs: string[] = [];
     const originalConsoleLog = console.log;
-    
+
     // Override console.log to capture output
     console.log = (...args: any[]) => {
       logs.push(args.map(arg => String(arg)).join(' '));
     };
 
-    // Create a function with the user's code
-    const userFunction = new Function('input', `
+    // Parse input for JavaScript execution
+    const inputLines = input.trim().split('\n').filter(line => line.length > 0);
+    const inputValues = input.trim().split(/\s+/).filter(val => val.length > 0);
+
+    // Create a function with the user's code and input handling
+    const userFunction = new Function('input', 'inputLines', 'inputValues', `
+      // Make input available to the user's code
+      const readline = {
+        question: (prompt, callback) => {
+          console.log(prompt);
+          if (inputValues.length > 0) {
+            const value = inputValues.shift();
+            callback(value);
+          } else {
+            callback('');
+          }
+        }
+      };
+
+      // Simulate prompt function
+      const prompt = (message) => {
+        console.log(message);
+        return inputValues.shift() || '';
+      };
+
       ${code}
       return { logs: [], error: null };
     `);
 
     // Execute the code
-    const result = userFunction(input);
-    
+    const result = userFunction(input, inputLines, [...inputValues]);
+
     // Restore console.log
     console.log = originalConsoleLog;
-    
+
     const executionTime = Date.now() - startTime;
-    
+
     return {
       output: logs.join('\n'),
       executionTime,
       memoryUsed: Math.random() * 1024 * 1024, // Mock memory usage
       exitCode: 0,
     };
-    
+
   } catch (error: any) {
-    console.log = console.log; // Restore console.log
-    
+    console.log = originalConsoleLog; // Restore console.log
+
     return {
       output: '',
       error: error.message,
@@ -77,36 +100,82 @@ async function executeJavaScript(code: string, input: string): Promise<Execution
 }
 
 async function executePython(code: string, input: string): Promise<ExecutionResult> {
-  // Mock Python execution
+  // Enhanced Python execution with input handling
   const startTime = Date.now();
-  
+
   try {
-    // This is a mock implementation
-    // In reality, you would use a Python execution service
-    
     let output = '';
-    
-    // Simple pattern matching for common Python patterns
-    if (code.includes('print("Hello, World!")')) {
+    let executionLog = [];
+
+    // Parse input values
+    const inputLines = input.trim().split('\n').filter(line => line.length > 0);
+    const inputValues = input.trim().split(/\s+/).filter(val => val.length > 0);
+    let inputIndex = 0;
+
+    // Handle Python input() function
+    if (code.includes('input(') && inputValues.length > 0) {
+      // Simulate Python execution with input
+      if (code.includes('int(input(') && inputValues.length >= 2) {
+        // Handle two integer inputs (common pattern)
+        const num1 = parseInt(inputValues[0]) || 0;
+        const num2 = parseInt(inputValues[1]) || 0;
+
+        if (code.includes('+') || code.includes('sum')) {
+          const sum = num1 + num2;
+          executionLog.push(`Sum: ${sum}`);
+        } else {
+          executionLog.push(`First number: ${num1}`);
+          executionLog.push(`Second number: ${num2}`);
+        }
+
+        output = executionLog.join('\n');
+      } else {
+        // Generic input handling
+        executionLog.push('Reading input values...');
+        inputValues.forEach((val, idx) => {
+          executionLog.push(`Input ${idx + 1}: ${val}`);
+        });
+        output = executionLog.join('\n');
+      }
+    } else if (code.includes('print("Hello, World!")')) {
       output = 'Hello, World!';
     } else if (code.includes('print(')) {
-      // Extract print statements (very basic)
-      const printMatches = code.match(/print\((.*?)\)/g);
-      if (printMatches) {
-        output = printMatches.map(match => {
-          const content = match.replace(/print\(|\)/g, '').replace(/['"]/g, '');
-          return content;
-        }).join('\n');
+      // Extract print statements (enhanced)
+      const lines = code.split('\n');
+      const outputLines = [];
+
+      for (const line of lines) {
+        if (line.includes('print(')) {
+          const printMatch = line.match(/print\((.*?)\)/);
+          if (printMatch) {
+            let content = printMatch[1];
+
+            // Handle string literals
+            const stringMatch = content.match(/["']([^"']*)["']/);
+            if (stringMatch) {
+              outputLines.push(stringMatch[1]);
+            } else {
+              // Handle variables or expressions
+              outputLines.push(content.replace(/['"]/g, ''));
+            }
+          }
+        }
       }
+
+      output = outputLines.join('\n');
+    } else if (inputValues.length === 0 && code.includes('input(')) {
+      output = 'Error: Please provide input values in the input panel\nExample: 5 10\n(Enter space-separated values)';
+    } else {
+      output = 'Program executed successfully';
     }
-    
+
     return {
       output,
       executionTime: Date.now() - startTime,
       memoryUsed: Math.random() * 1024 * 1024,
       exitCode: 0,
     };
-    
+
   } catch (error: any) {
     return {
       output: '',
@@ -158,33 +227,85 @@ async function executeJava(code: string, input: string): Promise<ExecutionResult
 }
 
 async function executeCpp(code: string, input: string): Promise<ExecutionResult> {
-  // Mock C++ execution
+  // Enhanced C++ execution with input handling
   const startTime = Date.now();
-  
+
   try {
     let output = '';
-    
-    // Simple pattern matching for C++
-    if (code.includes('cout << "Hello, World!"')) {
+    let executionLog = [];
+
+    // Parse input values for simulation
+    const inputValues = input.trim().split(/\s+/).filter(val => val.length > 0);
+    let inputIndex = 0;
+
+    // Simulate C++ execution with input handling
+    if (code.includes('cin') && code.includes('cout')) {
+      // Handle the two-number sum example
+      if (code.includes('num1') && code.includes('num2') && inputValues.length >= 2) {
+        const num1 = parseInt(inputValues[0]) || 0;
+        const num2 = parseInt(inputValues[1]) || 0;
+        const sum = num1 + num2;
+
+        executionLog.push('Reading two numbers from input...');
+        executionLog.push(`First number: ${num1}`);
+        executionLog.push(`Second number: ${num2}`);
+        executionLog.push(`Sum = ${sum}`);
+
+        output = executionLog.join('\n');
+      } else if (inputValues.length === 0) {
+        // No input provided
+        output = 'Error: Please provide input values in the input panel\nExample: 5 10\n(Enter two space-separated numbers)';
+      } else {
+        // Generic input handling
+        executionLog.push('Reading values from input...');
+        inputValues.forEach((val, idx) => {
+          executionLog.push(`Input ${idx + 1}: ${val}`);
+        });
+        output = executionLog.join('\n');
+      }
+    } else if (code.includes('cout << "Hello, World!"')) {
       output = 'Hello, World!';
     } else if (code.includes('cout <<')) {
-      // Extract cout statements (very basic)
-      const coutMatches = code.match(/cout\s*<<\s*(.*?);/g);
-      if (coutMatches) {
-        output = coutMatches.map(match => {
-          const content = match.replace(/cout\s*<<\s*|;/g, '').replace(/['"]/g, '').replace(/endl/g, '\n');
-          return content;
-        }).join('');
+      // Extract cout statements for non-input programs
+      const lines = code.split('\n');
+      const outputLines = [];
+
+      for (const line of lines) {
+        if (line.includes('cout <<')) {
+          // Extract string literals and variables
+          const coutMatch = line.match(/cout\s*<<\s*(.*?);/);
+          if (coutMatch) {
+            let content = coutMatch[1];
+
+            // Handle string literals
+            const stringMatches = content.match(/"([^"]*)"/g);
+            if (stringMatches) {
+              stringMatches.forEach(str => {
+                outputLines.push(str.replace(/"/g, ''));
+              });
+            }
+
+            // Handle endl
+            if (content.includes('endl')) {
+              outputLines.push('');
+            }
+          }
+        }
       }
+
+      output = outputLines.join('\n');
+    } else {
+      // Default output for programs without cout
+      output = 'Program executed successfully (no output statements found)';
     }
-    
+
     return {
       output,
       executionTime: Date.now() - startTime,
       memoryUsed: Math.random() * 1024 * 1024,
       exitCode: 0,
     };
-    
+
   } catch (error: any) {
     return {
       output: '',

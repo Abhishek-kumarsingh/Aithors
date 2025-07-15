@@ -25,6 +25,7 @@ import {
   SmartToy,
   QuestionAnswer,
   School,
+  Code,
   Feedback,
   Notifications,
   Settings,
@@ -80,6 +81,13 @@ const navigationItems: NavigationItem[] = [
     icon: <School />,
     path: '/dashboard/practice',
     color: '#ef4444'
+  },
+  {
+    id: 'code-environment',
+    label: 'Code Editor',
+    icon: <Code />,
+    path: '/dashboard/code-environment',
+    color: '#8b5cf6'
   },
   {
     id: 'ai-assistant',

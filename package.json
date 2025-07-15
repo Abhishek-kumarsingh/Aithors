@@ -23,6 +23,8 @@
     "db:seed-atlas": "node scripts/seed-atlas-production.js",
     "db:cleanup": "node scripts/cleanup-atlas.js",
     "db:reset-atlas": "node scripts/cleanup-atlas.js && node scripts/seed-atlas-production.js",
+    "seed:practice": "node scripts/seed-practice-questions.js",
+    "setup:practice": "node scripts/setup-practice-system.js",
     "server": "ts-node --project tsconfig.server.json server/index.ts"
   },
   "dependencies": {

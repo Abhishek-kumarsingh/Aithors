@@ -425,12 +425,13 @@ export default function PracticeQuestionPage() {
           </Card>
 
           {/* Question Content */}
-          <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 3 }}>
-            <Box sx={{ flex: 1 }}>
+          {/* For coding questions, use full width to accommodate 80/20 split layout */}
+          {question.type === 'coding' ? (
+            <Box sx={{ width: '100%' }}>
               <QuestionDisplay
                 question={{
                   id: question.id,
-                  type: question.type === 'system-design' ? 'subjective' : question.type as 'mcq' | 'subjective' | 'coding' | 'bug-fix',
+                  type: question.type as 'mcq' | 'subjective' | 'coding',
                   question: question.content.question,
                   options: question.content.options,
                   correctAnswer: question.content.correctAnswer
@@ -443,57 +444,54 @@ export default function PracticeQuestionPage() {
                 onRecordingChange={() => {}}
                 isPaused={!isTimerRunning}
               />
-            </Box>
 
-            <Box sx={{ width: { xs: '100%', lg: '33.333%' } }}>
-              {/* Action Panel */}
-              <Card sx={{ mb: 3 }}>
-                <CardContent>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
-                    Actions
-                  </Typography>
-                  
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                    <Button
-                      variant="contained"
-                      size="large"
-                      startIcon={<CheckCircle />}
-                      onClick={handleSubmit}
-                      disabled={!answer.trim() || practiceSession?.isCompleted}
-                      fullWidth
-                    >
-                      Submit Answer
-                    </Button>
-                    
-                    <Button
-                      variant="outlined"
-                      startIcon={<Lightbulb />}
-                      onClick={() => setShowHints(!showHints)}
-                      disabled={!question.content.hints?.length}
-                      fullWidth
-                    >
-                      {showHints ? 'Hide Hints' : 'Show Hints'}
-                    </Button>
-                    
-                    <Button
-                      variant="outlined"
-                      startIcon={<Flag />}
-                      fullWidth
-                    >
-                      Report Issue
-                    </Button>
-                  </Box>
-                </CardContent>
-              </Card>
+              {/* Action buttons for coding questions - placed below the editor */}
+              <Box sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: 2,
+                mt: 3,
+                p: 2,
+                bgcolor: 'background.paper',
+                borderRadius: 1,
+                border: '1px solid',
+                borderColor: 'divider'
+              }}>
+                <Button
+                  variant="contained"
+                  size="large"
+                  startIcon={<CheckCircle />}
+                  onClick={handleSubmit}
+                  disabled={!answer.trim() || practiceSession?.isCompleted}
+                >
+                  Submit Answer
+                </Button>
 
-              {/* Hints */}
+                <Button
+                  variant="outlined"
+                  startIcon={<Lightbulb />}
+                  onClick={() => setShowHints(!showHints)}
+                  disabled={!question.content.hints?.length}
+                >
+                  {showHints ? 'Hide Hints' : 'Show Hints'}
+                </Button>
+
+                <Button
+                  variant="outlined"
+                  startIcon={<Flag />}
+                >
+                  Report Issue
+                </Button>
+              </Box>
+
+              {/* Hints for coding questions */}
               {showHints && question.content.hints && question.content.hints.length > 0 && (
-                <Card sx={{ mb: 3 }}>
+                <Card sx={{ mt: 3 }}>
                   <CardContent>
                     <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
                       Hints 💡
                     </Typography>
-                    
+
                     {question.content.hints.map((hint, index) => (
                       <Alert key={index} severity="info" sx={{ mb: 1 }}>
                         <Typography variant="body2">
@@ -504,57 +502,141 @@ export default function PracticeQuestionPage() {
                   </CardContent>
                 </Card>
               )}
+            </Box>
+          ) : (
+            /* For non-coding questions, use the original layout */
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', lg: 'row' }, gap: 3 }}>
+              <Box sx={{ flex: 1 }}>
+                <QuestionDisplay
+                  question={{
+                    id: question.id,
+                    type: question.type === 'system-design' ? 'subjective' : question.type as 'mcq' | 'subjective' | 'coding',
+                    question: question.content.question,
+                    options: question.content.options,
+                    correctAnswer: question.content.correctAnswer
+                  }}
+                  onAnswerSubmit={(submittedAnswer) => {
+                    setAnswer(submittedAnswer);
+                    // Handle answer submission logic here
+                  }}
+                  isRecording={false}
+                  onRecordingChange={() => {}}
+                  isPaused={!isTimerRunning}
+                />
+              </Box>
 
-              {/* Question Info */}
-              <Card>
-                <CardContent>
-                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
-                    Question Info
-                  </Typography>
-                  
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                    <Box>
-                      <Typography variant="body2" color="text.secondary">
-                        Attempts
+              <Box sx={{ width: { xs: '100%', lg: '33.333%' } }}>
+                  {/* Action Panel */}
+                  <Card sx={{ mb: 3 }}>
+                    <CardContent>
+                      <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+                        Actions
                       </Typography>
-                      <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                        {question.attempts} previous attempts
-                      </Typography>
-                    </Box>
-                    
-                    <Divider />
-                    
-                    <Box>
-                      <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                        Skills & Tags
-                      </Typography>
-                      <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
-                        {question.tags.map((tag, index) => (
-                          <Chip key={index} label={tag} size="small" variant="outlined" />
-                        ))}
+
+                      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                        <Button
+                          variant="contained"
+                          size="large"
+                          startIcon={<CheckCircle />}
+                          onClick={handleSubmit}
+                          disabled={!answer.trim() || practiceSession?.isCompleted}
+                          fullWidth
+                        >
+                          Submit Answer
+                        </Button>
+
+                        <Button
+                          variant="outlined"
+                          startIcon={<Lightbulb />}
+                          onClick={() => setShowHints(!showHints)}
+                          disabled={!question.content.hints?.length}
+                          fullWidth
+                        >
+                          {showHints ? 'Hide Hints' : 'Show Hints'}
+                        </Button>
+
+                        <Button
+                          variant="outlined"
+                          startIcon={<Flag />}
+                          fullWidth
+                        >
+                          Report Issue
+                        </Button>
                       </Box>
-                    </Box>
-                    
-                    {question.companies.length > 0 && (
-                      <>
+                    </CardContent>
+                  </Card>
+
+                  {/* Hints */}
+                  {showHints && question.content.hints && question.content.hints.length > 0 && (
+                    <Card sx={{ mb: 3 }}>
+                      <CardContent>
+                        <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+                          Hints 💡
+                        </Typography>
+
+                        {question.content.hints.map((hint, index) => (
+                          <Alert key={index} severity="info" sx={{ mb: 1 }}>
+                            <Typography variant="body2">
+                              <strong>Hint {index + 1}:</strong> {hint}
+                            </Typography>
+                          </Alert>
+                        ))}
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {/* Question Info */}
+                  <Card>
+                    <CardContent>
+                      <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+                        Question Info
+                      </Typography>
+
+                      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                        <Box>
+                          <Typography variant="body2" color="text.secondary">
+                            Attempts
+                          </Typography>
+                          <Typography variant="body1" sx={{ fontWeight: 600 }}>
+                            {question.attempts} previous attempts
+                          </Typography>
+                        </Box>
+
                         <Divider />
+
                         <Box>
                           <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-                            Companies
+                            Skills & Tags
                           </Typography>
                           <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
-                            {question.companies.map((company, index) => (
-                              <Chip key={index} label={company} size="small" color="primary" variant="outlined" />
+                            {question.tags.map((tag, index) => (
+                              <Chip key={index} label={tag} size="small" variant="outlined" />
                             ))}
                           </Box>
                         </Box>
-                      </>
-                    )}
-                  </Box>
-                </CardContent>
-              </Card>
-            </Box>
-          </Box>
+
+                        {question.companies.length > 0 && (
+                          <>
+                            <Divider />
+                            <Box>
+                              <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                                Companies
+                              </Typography>
+                              <Box sx={{ display: 'flex', gap: 0.5, flexWrap: 'wrap' }}>
+                                {question.companies.map((company, index) => (
+                                  <Chip key={index} label={company} size="small" color="primary" variant="outlined" />
+                                ))}
+                              </Box>
+                            </Box>
+                          </>
+                        )}
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Box>
+              </Box>
+            )
+          }
         </motion.div>
       </Container>
 

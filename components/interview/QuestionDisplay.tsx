@@ -33,6 +33,7 @@ import {
 } from '@mui/icons-material';
 import Editor from '@monaco-editor/react';
 import { motion } from 'framer-motion';
+import { CodingLayout } from '../shared/CodingLayout';
 
 interface Question {
   id: string;
@@ -395,70 +396,21 @@ export const QuestionDisplay: React.FC<QuestionDisplayProps> = ({
             )}
 
             {(question.type === 'coding' || question.type === 'bug-fix') && (
-              <Box>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                  <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-                    {question.type === 'coding' ? 'Write your solution:' : 'Fix the bug in the code:'}
-                  </Typography>
-                  
-                  <FormControl size="small" sx={{ minWidth: 120 }}>
-                    <InputLabel>Language</InputLabel>
-                    <Select
-                      value={selectedLanguage}
-                      label="Language"
-                      onChange={(e) => setSelectedLanguage(e.target.value)}
-                    >
-                      {programmingLanguages.map((lang) => (
-                        <MenuItem key={lang.value} value={lang.value}>
-                          {lang.label}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </FormControl>
-                </Box>
-
-                <Box sx={{ border: '1px solid', borderColor: 'divider', borderRadius: 1, mb: 2 }}>
-                  <Editor
-                    height="400px"
-                    language={selectedLanguage}
-                    value={code}
-                    onChange={(value) => setCode(value || '')}
-                    theme="vs-dark"
-                    options={{
-                      minimap: { enabled: false },
-                      fontSize: 14,
-                      lineNumbers: 'on',
-                      roundedSelection: false,
-                      scrollBeyondLastLine: false,
-                      automaticLayout: true
-                    }}
-                  />
-                </Box>
-
-                <Box sx={{ display: 'flex', gap: 2, mb: 2 }}>
-                  <Button
-                    variant="outlined"
-                    startIcon={<PlayArrow />}
-                    onClick={executeCode}
-                    disabled={isExecuting || !code.trim()}
-                  >
-                    {isExecuting ? 'Running...' : 'Run Code'}
-                  </Button>
-                </Box>
-
-                {codeOutput && (
-                  <Card sx={{ bgcolor: 'grey.900', color: 'white' }}>
-                    <CardContent>
-                      <Typography variant="subtitle2" sx={{ mb: 1, color: 'grey.300' }}>
-                        Output:
-                      </Typography>
-                      <Typography variant="body2" component="pre" sx={{ fontFamily: 'monospace' }}>
-                        {codeOutput}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                )}
-              </Box>
+              <CodingLayout
+                code={code}
+                onCodeChange={setCode}
+                selectedLanguage={selectedLanguage}
+                onLanguageChange={setSelectedLanguage}
+                programmingLanguages={programmingLanguages}
+                questionContent={question.question}
+                buggyCode={question.buggyCode}
+                questionType={question.type}
+                onExecuteCode={executeCode}
+                isExecuting={isExecuting}
+                codeOutput={codeOutput}
+                onResetCode={() => setCode(getStarterCode())}
+                showInstructions={true}
+              />
             )}
 
             {/* Submit Button */}
