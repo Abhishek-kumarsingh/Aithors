@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { otpStorage } from '../send-otp/route';
+import { otpStorage } from '@/lib/otp-storage';
 
 // Maximum verification attempts
 const MAX_ATTEMPTS = 3;

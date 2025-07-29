@@ -38,7 +38,7 @@ import {
 } from '@mui/icons-material';
 import Editor from '@monaco-editor/react';
 import { motion } from 'framer-motion';
-import { CodingLayout } from '../../components/shared/CodingLayout';
+import { CodingLayout } from '@/components/shared/CodingLayout';
 import { useRouter } from 'next/navigation';
 
 const programmingLanguages = [
@@ -423,7 +423,6 @@ export default function CodeEnvironmentPage() {
                   automaticLayout: true,
                   wordWrap: 'on',
                   folding: true,
-                  bracketMatching: 'always',
                   autoIndent: 'full',
                   formatOnPaste: true,
                   formatOnType: true

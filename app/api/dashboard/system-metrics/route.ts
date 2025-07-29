@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from '@/lib/auth-config';
 import { connectToMongoDB } from '@/lib/mongodb';
 import { SystemMetricsModel } from '@/lib/models/DashboardModels';
 import { getCurrentSystemMetrics, collectSystemMetrics } from '@/lib/utils/dashboardUtils';

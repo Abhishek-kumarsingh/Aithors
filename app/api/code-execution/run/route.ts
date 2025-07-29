@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth-config";
 
 // Mock code execution service
 // In a real implementation, you would use a sandboxed execution environment
@@ -32,10 +32,11 @@ interface ExecutionResult {
 async function executeJavaScript(code: string, input: string): Promise<ExecutionResult> {
   const startTime = Date.now();
 
+  // Create a safe execution context
+  const logs: string[] = [];
+  const originalConsoleLog = console.log;
+
   try {
-    // Create a safe execution context
-    const logs: string[] = [];
-    const originalConsoleLog = console.log;
 
     // Override console.log to capture output
     console.log = (...args: any[]) => {

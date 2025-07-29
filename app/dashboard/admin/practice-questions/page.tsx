@@ -14,7 +14,7 @@ import {
   MenuItem,
   TextField,
   Alert,
-  Grid2 as Grid,
+  Grid,
   Chip,
   LinearProgress,
   Dialog,
@@ -229,7 +229,7 @@ export default function AdminPracticeQuestionsPage() {
           {questionTypes.map((type) => {
             const count = questions.filter((q: any) => q.type === type.value).length;
             return (
-              <Grid key={type.value} xs={12} sm={6} md={3}>
+              <Grid key={type.value} size={{ xs: 12, sm: 6, md: 3 }}>
                 <Card>
                   <CardContent>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -338,7 +338,7 @@ export default function AdminPracticeQuestionsPage() {
           <DialogTitle>Generate Practice Questions</DialogTitle>
           <DialogContent>
             <Grid container spacing={3} sx={{ mt: 1 }}>
-              <Grid xs={12} sm={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth>
                   <InputLabel>Domain</InputLabel>
                   <Select
@@ -355,7 +355,7 @@ export default function AdminPracticeQuestionsPage() {
                 </FormControl>
               </Grid>
               
-              <Grid xs={12} sm={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth>
                   <InputLabel>Sub Domain</InputLabel>
                   <Select
@@ -372,7 +372,7 @@ export default function AdminPracticeQuestionsPage() {
                 </FormControl>
               </Grid>
               
-              <Grid xs={12} sm={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth>
                   <InputLabel>Question Type</InputLabel>
                   <Select
@@ -389,7 +389,7 @@ export default function AdminPracticeQuestionsPage() {
                 </FormControl>
               </Grid>
               
-              <Grid xs={12} sm={6}>
+              <Grid size={{ xs: 12, sm: 6 }}>
                 <FormControl fullWidth>
                   <InputLabel>Difficulty</InputLabel>
                   <Select
@@ -406,7 +406,7 @@ export default function AdminPracticeQuestionsPage() {
                 </FormControl>
               </Grid>
               
-              <Grid xs={12}>
+              <Grid size={{ xs: 12 }}>
                 <TextField
                   fullWidth
                   type="number"
