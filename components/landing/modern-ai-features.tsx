@@ -413,6 +413,8 @@ export function ModernAIFeatures() {
                         : 'linear-gradient(135deg, #f59e0b, #d97706)',
                       fontWeight: 600,
                       textTransform: 'none',
+                      fontSize: { xs: '0.875rem', md: '1rem' },
+                      py: { xs: 1, md: 1.5 },
                       '&:hover': {
                         transform: 'translateY(-2px)',
                         boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)',

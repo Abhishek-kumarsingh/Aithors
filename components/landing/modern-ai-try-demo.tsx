@@ -471,7 +471,9 @@ export function ModernAITryDemo() {
                 sx={{
                   background: 'linear-gradient(45deg, #059669 30%, #2563eb 90%)',
                   color: 'white',
-                  px: 4,
+                  px: { xs: 2.5, md: 4 },
+                  py: { xs: 1, md: 1.5 },
+                  fontSize: { xs: '0.875rem', md: '1rem' },
                   '&:hover': {
                     background: 'linear-gradient(45deg, #047857 30%, #1d4ed8 90%)',
                   },

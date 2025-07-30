@@ -357,8 +357,9 @@ export function ModernAIHeader() {
                       background: 'linear-gradient(135deg, #9333ea 0%, #ec4899 100%)',
                       fontWeight: 600,
                       textTransform: 'none',
-                      px: 3,
-                      py: 1.5,
+                      px: { xs: 2, md: 3 },
+                      py: { xs: 1, md: 1.5 },
+                      fontSize: { xs: '0.875rem', md: '1rem' },
                       borderRadius: 2,
                       boxShadow: '0 4px 14px rgba(147, 51, 234, 0.3)',
                       '&:hover': {

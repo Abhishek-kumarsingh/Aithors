@@ -349,8 +349,9 @@ export function ModernAIFAQ() {
                 <Box
                   component="button"
                   sx={{
-                    px: 3,
-                    py: 1.5,
+                    px: { xs: 2.5, md: 3 },
+                    py: { xs: 1.25, md: 1.5 },
+                    fontSize: { xs: '0.875rem', md: '1rem' },
                     background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%)',
                     color: 'white',
                     borderRadius: 2,
@@ -368,8 +369,9 @@ export function ModernAIFAQ() {
                 <Box
                   component="button"
                   sx={{
-                    px: 3,
-                    py: 1.5,
+                    px: { xs: 2.5, md: 3 },
+                    py: { xs: 1.25, md: 1.5 },
+                    fontSize: { xs: '0.875rem', md: '1rem' },
                     border: '1px solid',
                     borderColor: 'divider',
                     color: '#1e293b',
