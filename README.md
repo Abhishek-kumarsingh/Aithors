@@ -175,7 +175,7 @@ npm run dev
 
 ### Default Admin Access
 - **Email**: `alpsingh03@gmail.com`
-- **Password**: `Aa2275aA`
+- **Password**: `cdyx`
 
 Visit `http://localhost:3000` to access the application.
 
