@@ -158,7 +158,7 @@ export function ModernAIFAQ() {
               sx={{
                 fontSize: { xs: '2.5rem', md: '3.5rem' },
                 fontWeight: 800,
-                color: 'text.primary',
+                color: '#1e293b',
                 mb: 3,
                 textShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
               }}
@@ -269,7 +269,7 @@ export function ModernAIFAQ() {
                           fontWeight: 600,
                           fontSize: { xs: '0.95rem', md: '1.1rem' },
                           lineHeight: 1.3,
-                          color: 'text.primary',
+                          color: '#1e293b',
                         }}
                       >
                         {faq.question}
@@ -322,7 +322,7 @@ export function ModernAIFAQ() {
                 variant="h4"
                 sx={{
                   fontWeight: 700,
-                  color: 'text.primary',
+                  color: '#1e293b',
                   mb: 2,
                 }}
               >
@@ -372,7 +372,7 @@ export function ModernAIFAQ() {
                     py: 1.5,
                     border: '1px solid',
                     borderColor: 'divider',
-                    color: 'text.primary',
+                    color: '#1e293b',
                     borderRadius: 2,
                     fontWeight: 600,
                     backgroundColor: 'transparent',

@@ -147,7 +147,7 @@ export function ModernAIHeader() {
                 color="inherit"
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                sx={{ color: scrolled ? 'text.primary' : 'white' }}
+                sx={{ color: scrolled ? '#1e293b' : 'white' }}
               >
                 {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
               </IconButton>
@@ -202,7 +202,7 @@ export function ModernAIHeader() {
                 onClick={handleProductMenuOpen}
                 endIcon={<ChevronDown size={16} />}
                 sx={{
-                  color: scrolled ? 'text.primary' : 'white',
+                  color: scrolled ? '#1e293b' : 'white',
                   fontWeight: 500,
                   textTransform: 'none',
                   '&:hover': {
@@ -268,7 +268,7 @@ export function ModernAIHeader() {
                   component={Link}
                   href={item.href}
                   sx={{
-                    color: scrolled ? 'text.primary' : 'white',
+                    color: scrolled ? '#1e293b' : 'white',
                     fontWeight: 500,
                     textTransform: 'none',
                     px: 2,
@@ -329,7 +329,7 @@ export function ModernAIHeader() {
                     component={Link}
                     href="/auth/login"
                     sx={{
-                      color: scrolled ? 'text.primary' : 'white',
+                      color: scrolled ? '#1e293b' : 'white',
                       fontWeight: 500,
                       textTransform: 'none',
                       display: { xs: 'none', lg: 'flex' },

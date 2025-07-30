@@ -189,7 +189,7 @@ export function ModernAITryDemo() {
               sx={{
                 fontSize: { xs: '2.5rem', md: '3.5rem' },
                 fontWeight: 800,
-                color: 'text.primary',
+                color: '#1e293b',
                 mb: 3,
                 textShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
               }}
@@ -233,7 +233,7 @@ export function ModernAITryDemo() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Typography variant="h4" sx={{ fontWeight: 700, color: 'text.primary', mb: 3 }}>
+            <Typography variant="h4" sx={{ fontWeight: 700, color: '#1e293b', mb: 3 }}>
               Sample Interview Questions
             </Typography>
             
@@ -274,7 +274,7 @@ export function ModernAITryDemo() {
                       </Box>
                     </Box>
 
-                    <Typography variant="h6" sx={{ color: 'text.primary', lineHeight: 1.6, mb: 2 }}>
+                    <Typography variant="h6" sx={{ color: '#1e293b', lineHeight: 1.6, mb: 2 }}>
                       {sampleQuestions[currentQuestion].question}
                     </Typography>
 
@@ -316,7 +316,7 @@ export function ModernAITryDemo() {
             viewport={{ once: true }}
           >
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: { xs: 2.5, md: 3 }, flexDirection: { xs: 'column', sm: 'row' }, gap: { xs: 2, sm: 0 } }}>
-              <Typography variant="h4" sx={{ fontWeight: 700, color: 'text.primary', fontSize: { xs: '1.5rem', md: '2rem' } }}>
+              <Typography variant="h4" sx={{ fontWeight: 700, color: '#1e293b', fontSize: { xs: '1.5rem', md: '2rem' } }}>
                 Live Demo
               </Typography>
               <Button
@@ -354,7 +354,7 @@ export function ModernAITryDemo() {
                     >
                       <Play className="w-8 h-8 text-white" />
                     </Box>
-                    <Typography variant="h6" sx={{ fontWeight: 600, color: 'text.primary', mb: 1, fontSize: '1.1rem' }}>
+                    <Typography variant="h6" sx={{ fontWeight: 600, color: '#1e293b', mb: 1, fontSize: '1.1rem' }}>
                       Ready to Experience AI Interview?
                     </Typography>
                     <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2.5, fontSize: '0.95rem' }}>

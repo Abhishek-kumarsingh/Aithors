@@ -272,7 +272,7 @@ export function ModernAIRoadmapPreview() {
               sx={{
                 fontSize: { xs: '2.5rem', md: '3.5rem' },
                 fontWeight: 800,
-                color: 'text.primary',
+                color: '#1e293b',
                 mb: 3,
                 textShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
               }}
@@ -364,7 +364,7 @@ export function ModernAIRoadmapPreview() {
                       variant="h6"
                       sx={{
                         fontWeight: 700,
-                        color: selectedRoadmap === index ? '#9333ea' : 'text.primary',
+                        color: selectedRoadmap === index ? '#9333ea' : '#1e293b',
                         mb: 1
                       }}
                     >
@@ -411,7 +411,7 @@ export function ModernAIRoadmapPreview() {
             <CardContent sx={{ p: 4 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 4 }}>
                 <Box>
-                  <Typography variant="h3" sx={{ fontWeight: 800, color: 'text.primary', mb: 1 }}>
+                  <Typography variant="h3" sx={{ fontWeight: 800, color: '#1e293b', mb: 1 }}>
                     {currentRoadmap.title} Roadmap
                   </Typography>
                   <Typography variant="h6" sx={{ color: 'text.secondary' }}>
@@ -502,7 +502,7 @@ export function ModernAIRoadmapPreview() {
                           }}
                         >
                           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2 }}>
-                            <Typography variant="h6" sx={{ fontWeight: 700, color: 'text.primary' }}>
+                            <Typography variant="h6" sx={{ fontWeight: 700, color: '#1e293b' }}>
                               {step.title}
                             </Typography>
                             <Box

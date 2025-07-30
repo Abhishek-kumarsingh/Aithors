@@ -186,7 +186,7 @@ export function ModernAIFeatures() {
                 sx={{
                   fontSize: { xs: '2rem', md: '2.8rem' },
                   fontWeight: 700,
-                  color: 'text.primary',
+                  color: '#1e293b',
                   mb: 3,
                   lineHeight: 1.2,
                   textShadow: '0 2px 10px rgba(0, 0, 0, 0.08)',
@@ -319,7 +319,7 @@ export function ModernAIFeatures() {
                           variant="h6"
                           sx={{
                             fontWeight: 600,
-                            color: 'text.primary',
+                            color: '#1e293b',
                             mb: 0.5,
                             fontSize: '1.1rem',
                           }}
