@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
@@ -93,7 +93,7 @@ export default function AdminAnalyticsPage() {
   }, [session, status, router]);
 
   // Fetch analytics data
-  const fetchAnalyticsData = async () => {
+  const fetchAnalyticsData = useCallback(async () => {
     try {
       setError(null);
       
@@ -134,14 +134,14 @@ export default function AdminAnalyticsPage() {
       setLoading(false);
       setRefreshing(false);
     }
-  };
+  }, [timeRange]);
 
   // Initial data fetch
   useEffect(() => {
     if (status === 'authenticated' && session?.user?.role === 'admin') {
       fetchAnalyticsData();
     }
-  }, [status, session, timeRange]);
+  }, [status, session, timeRange, fetchAnalyticsData]);
 
   const handleRefresh = () => {
     setRefreshing(true);

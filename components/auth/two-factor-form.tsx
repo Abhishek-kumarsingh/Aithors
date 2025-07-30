@@ -140,7 +140,7 @@ export function TwoFactorForm({
               onChange={(e) => setBackupCode(e.target.value)}
             />
             <p className="text-xs text-muted-foreground">
-              Enter one of your backup codes if you don't have access to your authenticator app.
+              Enter one of your backup codes if you don&apos;t have access to your authenticator app.
             </p>
           </div>
           <Button

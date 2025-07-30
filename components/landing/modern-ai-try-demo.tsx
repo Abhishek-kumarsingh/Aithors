@@ -358,7 +358,7 @@ export function ModernAITryDemo() {
                       Ready to Experience AI Interview?
                     </Typography>
                     <Typography variant="body1" sx={{ color: 'text.secondary', mb: 2.5, fontSize: '0.95rem' }}>
-                      Click "Start Demo" to see how our AI interviewer works
+                      Click &quot;Start Demo&quot; to see how our AI interviewer works
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, color: 'text.secondary' }}>
                       <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>

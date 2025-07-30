@@ -406,7 +406,7 @@ export const InterviewCard: React.FC<InterviewCardProps> = ({
         <DialogTitle>Delete Interview</DialogTitle>
         <DialogContent>
           <Typography>
-            Are you sure you want to delete "{interview.title}"? This action cannot be undone.
+            Are you sure you want to delete &quot;{interview.title}&quot;? This action cannot be undone.
           </Typography>
         </DialogContent>
         <DialogActions>

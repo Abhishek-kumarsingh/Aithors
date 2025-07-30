@@ -295,7 +295,7 @@ export const CodingLayout: React.FC<CodingLayoutProps> = ({
                     <Typography variant="caption" sx={{ fontSize: '0.75rem', color: 'text.secondary' }}>
                       For programs that read input (cin, input(), Scanner), provide values in the input panel below.
                       <br />
-                      Example: For two numbers, enter "5 10" (space-separated)
+                      Example: For two numbers, enter &quot;5 10&quot; (space-separated)
                       <br />
                       Each line or space represents a separate input value.
                     </Typography>

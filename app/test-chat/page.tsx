@@ -143,10 +143,10 @@ export default function TestChatPage() {
             Instructions
           </Typography>
           <Typography variant="body2" sx={{ mb: 1 }}>
-            1. Click "Check API Status" to verify AI API configuration
+            1. Click &quot;Check API Status&quot; to verify AI API configuration
           </Typography>
           <Typography variant="body2" sx={{ mb: 1 }}>
-            2. Enter a message and click "Send" to test AI response
+            2. Enter a message and click &quot;Send&quot; to test AI response
           </Typography>
           <Typography variant="body2">
             3. Check the response to see if AI is working properly

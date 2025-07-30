@@ -178,7 +178,7 @@ export default function DebugAuthPage() {
             disabled={loading}
             sx={{ bgcolor: '#4285f4' }}
           >
-            Method 1: signIn('google') with redirect: false
+            Method 1: signIn(&apos;google&apos;) with redirect: false
           </Button>
 
           <Button

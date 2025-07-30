@@ -118,7 +118,7 @@ export const SubmissionDialog: React.FC<SubmissionDialogProps> = ({
         </Typography>
         
         <Typography variant="body1" color="text.secondary">
-          You've completed "{question.title}"
+          You&apos;ve completed &quot;{question.title}&quot;
         </Typography>
       </DialogTitle>
 
@@ -255,7 +255,7 @@ export const SubmissionDialog: React.FC<SubmissionDialogProps> = ({
             {score >= 80 ? (
               <Alert severity="success">
                 <Typography variant="body2">
-                  Excellent work! You've mastered this concept. Try tackling harder problems or explore related topics to continue improving.
+                  Excellent work! You&apos;ve mastered this concept. Try tackling harder problems or explore related topics to continue improving.
                 </Typography>
               </Alert>
             ) : score >= 60 ? (
@@ -267,7 +267,7 @@ export const SubmissionDialog: React.FC<SubmissionDialogProps> = ({
             ) : (
               <Alert severity="warning">
                 <Typography variant="body2">
-                  Don't give up! Review the fundamentals, practice similar problems, and consider seeking additional resources or help.
+                  Don&apos;t give up! Review the fundamentals, practice similar problems, and consider seeking additional resources or help.
                 </Typography>
               </Alert>
             )}

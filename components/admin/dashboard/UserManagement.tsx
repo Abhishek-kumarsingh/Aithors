@@ -620,7 +620,7 @@ export const UserManagement: React.FC<UserManagementProps> = ({
           <DialogTitle>Confirm Delete</DialogTitle>
           <DialogContent>
             <Typography>
-              Are you sure you want to delete user "{selectedUser?.name}"? This action cannot be undone.
+              Are you sure you want to delete user &quot;{selectedUser?.name}&quot;? This action cannot be undone.
             </Typography>
           </DialogContent>
           <DialogActions>

@@ -636,7 +636,7 @@ export default function RegisterPage() {
                       Check Your Email
                     </Typography>
                     <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-                      We've sent a 6-digit verification code to
+                      We&apos;ve sent a 6-digit verification code to
                     </Typography>
                     <Typography variant="body2" sx={{ color: '#a855f7', fontWeight: 600 }}>
                       {formState.email}

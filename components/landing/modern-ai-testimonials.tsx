@@ -305,7 +305,7 @@ export function ModernAITestimonials() {
                     fontStyle: 'italic',
                   }}
                 >
-                  "{activeTestimonialData.text}"
+                  "                  &quot;{activeTestimonialData.text}&quot;"
                 </Typography>
 
                 {/* User Info with Achievement */}
@@ -507,7 +507,7 @@ export function ModernAITestimonials() {
                           fontStyle: 'italic',
                         }}
                       >
-                        "{testimonial.text.substring(0, 100)}..."
+                        "                        &quot;{testimonial.text.substring(0, 100)}...&quot;"
                       </Typography>
                     </Box>
                   </motion.div>

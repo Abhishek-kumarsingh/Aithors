@@ -187,7 +187,7 @@ export function ModernAIFAQ() {
                 fontSize: '1.25rem',
               }}
             >
-              Find answers to the most common questions about our AI-powered interview platform. Can't find what you're looking for? Contact our support team.
+              Find answers to the most common questions about our AI-powered interview platform. Can&apos;t find what you&apos;re looking for? Contact our support team.
             </Typography>
           </Box>
         </motion.div>

@@ -141,7 +141,7 @@ export default function UserDashboardHome() {
               Welcome back, {user?.name?.split(' ')[0]}! 👋
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              Here's your interview preparation progress and recent activity.
+              Here&apos;s your interview preparation progress and recent activity.
             </Typography>
           </Box>
 

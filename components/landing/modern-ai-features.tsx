@@ -247,7 +247,7 @@ export function ModernAIFeatures() {
                   fontSize: '0.95rem',
                 }}
               >
-                Join thousands of professionals who've landed their dream jobs
+                Join thousands of professionals who&apos;ve landed their dream jobs
               </Typography>
             </Box>
           </Box>
