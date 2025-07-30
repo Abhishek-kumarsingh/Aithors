@@ -1,82 +1,158 @@
-# InterviewAI - Comprehensive AI-Powered Interview Platform
+# 🎯 Aithor - AI-Powered Interview Platform
 
-[![Next.js](https://img.shields.io/badge/Next.js-13.5.1-black)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-blue)](https://www.typescriptlang.org/)
-[![Material-UI](https://img.shields.io/badge/Material--UI-7.2.0-blue)](https://mui.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Latest-green)](https://www.mongodb.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<div align="center">
 
-InterviewAI is a comprehensive, enterprise-grade interview platform that leverages multiple AI providers to revolutionize the hiring process. Built with modern technologies and featuring a robust architecture, it provides intelligent interview management, real-time AI assistance, and comprehensive analytics.
+![Aithor Banner](https://via.placeholder.com/800x200/9333ea/ffffff?text=Aithor+-+AI+Interview+Platform)
 
-## 🚀 Key Features
+**Revolutionizing Interview Preparation with Artificial Intelligence**
 
-### 🤖 Multi-AI Provider Integration
-- **Google Gemini 2.0 Flash** - Primary AI provider for intelligent responses
-- **DeepSeek API** - Fallback provider for enhanced reliability  
-- **Claude (Anthropic)** - Advanced reasoning and analysis
-- **OpenAI GPT** - Additional AI capabilities
-- **Automatic Failover** - Seamless switching between providers
+[![Build Status](https://github.com/abhishek/aithor/workflows/CI/badge.svg)](https://github.com/abhishek/aithor/actions)
+[![Deploy Status](https://github.com/abhishek/aithor/workflows/Deploy/badge.svg)](https://github.com/abhishek/aithor/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
-### 👥 Comprehensive User Management
-- **Role-Based Access Control** - Admin and User roles with specific permissions
-- **Google OAuth Integration** - Secure social authentication
-- **Two-Factor Authentication** - Enhanced security with OTP verification
-- **Session Management** - Secure JWT-based authentication
-- **User Impersonation** - Admin capability for support and testing
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![AI Powered](https://img.shields.io/badge/AI-Powered-purple?style=for-the-badge&logo=openai)](https://ai.google.dev/)
 
-### 📊 Advanced Interview System
-- **AI-Powered Question Generation** - Dynamic questions based on job requirements
-- **Real-Time Code Execution** - Multi-language code testing environment
-- **Resume Analysis** - AI-powered resume parsing and skill extraction
-- **Voice Integration** - Text-to-speech and speech recognition
-- **Performance Analytics** - Detailed interview performance metrics
+[🚀 Live Demo](https://aithor.vercel.app) • [📚 Documentation](./docs) • [🐛 Report Bug](https://github.com/abhishek/aithor/issues) • [💡 Request Feature](https://github.com/abhishek/aithor/discussions)
 
-### 🎯 Modern Dashboard Experience
-- **Admin Dashboard** - Comprehensive system management and analytics
-- **User Dashboard** - Personalized interview tracking and progress
-- **Real-Time Updates** - WebSocket-powered live data
-- **Interactive Charts** - Advanced data visualization with Recharts
-- **Responsive Design** - Mobile-first approach with Material-UI
+</div>
 
-## 🏗️ Architecture Overview
+---
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    InterviewAI Platform                     │
-├─────────────────────────────────────────────────────────────┤
-│  Frontend (Next.js 13 + TypeScript + Material-UI)         │
-│  ├── Landing Page (Marketing & Features)                   │
-│  ├── Authentication (OAuth + 2FA)                          │
-│  ├── User Dashboard (Interviews + Analytics)               │
-│  └── Admin Dashboard (Management + System Metrics)         │
-├─────────────────────────────────────────────────────────────┤
-│  API Layer (Next.js API Routes)                            │
-│  ├── Authentication APIs (/api/auth/*)                     │
-│  ├── AI Integration APIs (/api/ai-assistant/*)             │
-│  ├── Interview Management (/api/interviews/*)              │
-│  ├── User Management (/api/user/*)                         │
-│  ├── Admin APIs (/api/admin/*)                             │
-│  └── Analytics & Reporting (/api/analytics/*)              │
-├─────────────────────────────────────────────────────────────┤
-│  AI Integration Layer                                       │
-│  ├── Google Gemini 2.0 Flash (Primary)                    │
-│  ├── DeepSeek API (Fallback)                               │
-│  ├── Claude/Anthropic (Advanced Analysis)                  │
-│  └── OpenAI GPT (Additional Capabilities)                  │
-├─────────────────────────────────────────────────────────────┤
-│  Database Layer (MongoDB)                                  │
-│  ├── Users Collection (Authentication & Profiles)          │
-│  ├── Interviews Collection (Sessions & Results)            │
-│  ├── ChatSessions Collection (AI Conversations)            │
-│  ├── Analytics Collection (Performance Metrics)            │
-│  └── SystemMetrics Collection (Platform Health)            │
-├─────────────────────────────────────────────────────────────┤
-│  External Services                                          │
-│  ├── Google OAuth (Authentication)                         │
-│  ├── Email Service (OTP & Notifications)                   │
-│  ├── File Storage (Resume & Document Upload)               │
-│  └── WebSocket (Real-time Updates)                         │
-└─────────────────────────────────────────────────────────────┘
+## 📊 Project Stats
+
+<!-- AUTO-GENERATED-CONTENT:START (STATS) -->
+![GitHub stars](https://img.shields.io/github/stars/abhishek/aithor?style=social)
+![GitHub forks](https://img.shields.io/github/forks/abhishek/aithor?style=social)
+![GitHub issues](https://img.shields.io/github/issues/abhishek/aithor)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/abhishek/aithor)
+![Last commit](https://img.shields.io/github/last-commit/abhishek/aithor)
+![Repo size](https://img.shields.io/github/repo-size/abhishek/aithor)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## 🌟 Overview
+
+Aithor is a cutting-edge AI-powered interview preparation platform designed to help job seekers excel in their interviews. Using advanced artificial intelligence, real-time conversation analysis, and comprehensive feedback systems, Aithor provides personalized interview practice that adapts to each user's skill level and career goals.
+
+### ✨ Key Features
+
+- 🤖 **AI-Powered Interviews**: Intelligent conversations that adapt to your responses
+- 📊 **Real-Time Analytics**: Comprehensive performance tracking and insights
+- 🎯 **Personalized Feedback**: Detailed analysis of technical and soft skills
+- 📱 **Mobile Responsive**: Practice anywhere, anytime on any device
+- 🔊 **Voice Integration**: Speech-to-text for natural conversation flow
+- 📄 **Resume Analysis**: AI-powered resume review and optimization
+- 🏆 **Progress Tracking**: Monitor improvement over time
+- 🌐 **Multi-Domain Support**: Questions across various industries and roles
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- MongoDB (local or Atlas)
+- npm or yarn package manager
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/abhishek/aithor.git
+   cd aithor
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Environment Setup**
+   ```bash
+   cp .env.example .env.local
+   ```
+
+   Update `.env.local` with your configuration:
+   ```env
+   # Database
+   MONGODB_URI=mongodb://localhost:27017/aithor
+
+   # Authentication
+   NEXTAUTH_SECRET=your-secret-key
+   NEXTAUTH_URL=http://localhost:3001
+
+   # AI API Keys
+   GEMINI_API_KEY=your-gemini-api-key
+
+   # Application
+   NODE_ENV=development
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🏗️ Architecture
+
+### Tech Stack
+
+| Category | Technology | Purpose |
+|----------|------------|---------|
+| **Frontend** | Next.js 14, TypeScript | React framework with SSR/SSG |
+| **Styling** | Material-UI, Tailwind CSS | Component library and utilities |
+| **Backend** | Next.js API Routes | Serverless API endpoints |
+| **Database** | MongoDB, Mongoose | Document database and ODM |
+| **Authentication** | NextAuth.js | Secure user authentication |
+| **AI Integration** | Google Gemini API | Natural language processing |
+| **Real-time** | Socket.io | WebSocket connections |
+| **Deployment** | Vercel | Cloud platform deployment |
+
+---
+
+## 📈 Recent Activity
+
+<!-- AUTO-GENERATED-CONTENT:START (ACTIVITY) -->
+### Latest Commits
+- **Latest commit message** - *Date*
+- **Second latest commit** - *Date*
+- **Third latest commit** - *Date*
+
+### Recent Contributors
+Thanks to these amazing people for their recent contributions!
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+---
+
+## 🧪 Testing & Quality
+
+<!-- AUTO-GENERATED-CONTENT:START (QUALITY) -->
+![Build Status](https://github.com/abhishek/aithor/workflows/CI/badge.svg)
+![Test Coverage](https://img.shields.io/codecov/c/github/abhishek/aithor)
+![Code Quality](https://img.shields.io/codeclimate/maintainability/abhishek/aithor)
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
 ```
 
 ## 📚 Documentation Index
@@ -142,111 +218,126 @@ InterviewAI is a comprehensive, enterprise-grade interview platform that leverag
 - **Build Tool**: Next.js built-in bundler
 - **Development**: Hot reload + Fast refresh
 
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 18+ 
-- MongoDB database (local or cloud)
-- Google OAuth credentials
-- AI API keys (Gemini required, others optional)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/interviewai.git
-cd interviewai
-
-# Install dependencies
-npm install
-
-# Set up environment variables
-cp .env.example .env.local
-
-# Configure your .env.local file with required variables
-# See docs/ENVIRONMENT.md for detailed configuration
-
-# Seed the database with admin user
-npm run seed-admin
-
-# Start development server
-npm run dev
-```
-
-### Default Admin Access
-- **Email**: `alpsingh03@gmail.com`
-- **Password**: `Aa2275aA`
-
-Visit `http://localhost:3000` to access the application.
-
-## 🌟 Key Features Breakdown
-
-### 🎯 Interview Management
-- **AI Question Generation** - Dynamic questions based on job requirements and resume analysis
-- **Multi-Domain Support** - Technical, behavioral, and domain-specific interviews
-- **Real-Time Code Testing** - Integrated code execution environment with multiple language support
-- **Performance Analytics** - Detailed scoring and feedback with AI-powered insights
-- **Resume Integration** - Automatic parsing and skill extraction from uploaded resumes
-
-### 🤖 AI Assistant Features  
-- **Multi-Provider Support** - Seamless integration with multiple AI providers
-- **Intelligent Fallback** - Automatic switching to backup providers on failure
-- **Context Awareness** - Maintains conversation context across sessions
-- **Streaming Responses** - Real-time response generation for better UX
-- **Cost Tracking** - Monitor AI usage and costs across providers
-
-### 📊 Analytics & Reporting
-- **Real-Time Dashboards** - Live metrics and system health monitoring
-- **Performance Insights** - Detailed candidate performance analysis
-- **System Analytics** - Platform usage statistics and trends
-- **Export Capabilities** - PDF reports and data export functionality
-- **Custom Metrics** - Configurable KPIs and performance indicators
-
-### 🔐 Security & Authentication
-- **Multi-Factor Authentication** - OTP-based email verification
-- **Role-Based Access Control** - Granular permissions for different user types
-- **Session Management** - Secure JWT-based authentication with refresh tokens
-- **OAuth Integration** - Google OAuth for seamless social login
-- **Admin Impersonation** - Secure user impersonation for support scenarios
-
-## 📈 Performance & Scalability
-
-- **Optimized Bundle Size** - Code splitting and lazy loading
-- **Database Indexing** - Optimized MongoDB queries and indexes
-- **Caching Strategy** - Redis caching for frequently accessed data
-- **CDN Integration** - Static asset optimization and delivery
-- **Horizontal Scaling** - Designed for multi-instance deployment
+---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](docs/CONTRIBUTING.md) for details on:
+We welcome contributions from the community!
 
-- Code of Conduct
-- Development setup
-- Pull request process
-- Coding standards
-- Testing requirements
+<!-- AUTO-GENERATED-CONTENT:START (CONTRIBUTORS) -->
+### Contributors
+
+Thanks goes to these wonderful people:
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes and add tests
+4. Commit your changes: `git commit -m 'Add amazing feature'`
+5. Push to the branch: `git push origin feature/amazing-feature`
+6. Open a Pull Request
+
+---
+
+## 📊 Project Metrics
+
+<!-- AUTO-GENERATED-CONTENT:START (METRICS) -->
+### Development Activity (Last 30 Days)
+- **Commits**: [Auto-generated number]
+- **Pull Requests**: [Auto-generated number]
+- **Issues Closed**: [Auto-generated number]
+- **New Contributors**: [Auto-generated number]
+
+### Code Statistics
+- **Total Lines of Code**: [Auto-generated number]
+- **Languages Used**: TypeScript (65%), JavaScript (20%), CSS (10%), Other (5%)
+- **Test Coverage**: [Auto-generated percentage]%
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+---
+
+## 🎯 Roadmap
+
+### Current Version (v1.0) ✅
+- ✅ AI-powered interview sessions
+- ✅ Real-time feedback system
+- ✅ User authentication & profiles
+- ✅ Basic analytics dashboard
+- ✅ Mobile responsive design
+
+### Upcoming Features (v1.1) 🔄
+- 🔄 Video interview capabilities
+- 🔄 Advanced analytics & insights
+- 🔄 Team collaboration features
+- 🔄 Integration with job boards
+- 🔄 Mobile application
+
+### Future Vision (v2.0) 📋
+- 📋 AI-powered career coaching
+- 📋 Company-specific interview prep
+- 📋 Live mentor connections
+- 📋 Advanced performance metrics
+- 📋 Enterprise solutions
+
+---
+
+## 👥 Team
+
+### Project Lead & Developer
+**Abhishek Kumar Singh**
+- 🔗 LinkedIn: [Abhishek Kumar Singh](https://linkedin.com/in/abhishek-kumar-singh)
+- 📧 Email: abhishek@aithor.in
+- 🐙 GitHub: [@abhishek](https://github.com/abhishek)
+
+---
+
+## 📞 Support & Contact
+
+### Get Help
+- 📧 **General Inquiries**: contact@aithor.in
+- 🐛 **Bug Reports**: [GitHub Issues](https://github.com/abhishek/aithor/issues)
+- 💡 **Feature Requests**: [GitHub Discussions](https://github.com/abhishek/aithor/discussions)
+- 🔒 **Security Issues**: security@aithor.in
+
+### Community
+- 💬 **Discord**: [Join our community](https://discord.gg/aithor)
+- 🐦 **Twitter**: [@AithorPlatform](https://twitter.com/AithorPlatform)
+- 📱 **LinkedIn**: [Aithor Company Page](https://linkedin.com/company/aithor)
+
+---
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support & Community
-
-- **Documentation**: Comprehensive guides in the `/docs` folder
-- **Issues**: [GitHub Issues](https://github.com/yourusername/interviewai/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/interviewai/discussions)
-- **Email**: support@interviewai.com
+---
 
 ## 🙏 Acknowledgments
 
-- **Google** for the Gemini AI API and OAuth services
-- **Anthropic** for the Claude AI API
-- **Material-UI Team** for the excellent component library
+- **Google Gemini AI** for powerful language processing capabilities
+- **Vercel** for seamless deployment and hosting
+- **MongoDB** for reliable database solutions
 - **Next.js Team** for the amazing React framework
-- **MongoDB** for the flexible database solution
-- **All Contributors** who have helped build and improve this platform
-
+- **Open Source Community** for inspiration and support
 ---
 
-**Built with ❤️ by the InterviewAI Team**
+<!-- AUTO-GENERATED-CONTENT:START (FOOTER) -->
+### 📊 Repository Stats
+![Profile Views](https://komarev.com/ghpvc/?username=abhishek&color=blue)
+![Followers](https://img.shields.io/github/followers/abhishek?style=social)
+
+**Last Updated**: [Auto-generated timestamp]
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+<div align="center">
+
+**⭐ Star this repository if you find it helpful!**
+
+[🚀 Try Aithor Now](https://aithor.vercel.app) | [📖 Read the Docs](./docs) | [🤝 Contribute](./CONTRIBUTING.md)
+
+**Made with ❤️ for job seekers worldwide**
+
+</div>
