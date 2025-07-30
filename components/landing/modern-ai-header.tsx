@@ -54,11 +54,6 @@ const navigationItems = [
     label: "Demo",
     href: "#demo",
     description: "Try our AI interviewer"
-  },
-  {
-    label: "Pricing",
-    href: "/pricing",
-    description: "Choose your plan"
   }
 ];
 

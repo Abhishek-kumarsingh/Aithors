@@ -3,7 +3,7 @@ import { ModernAILandingHero } from "@/components/landing/modern-ai-landing-hero
 import { ModernAIHowItWorks } from "@/components/landing/modern-ai-how-it-works";
 import { ModernAIFeatures } from "@/components/landing/modern-ai-features";
 import { ModernAITryDemo } from "@/components/landing/modern-ai-try-demo";
-import { ModernAITestimonials } from "@/components/landing/modern-ai-testimonials";
+
 import { ModernAIRoadmapPreview } from "@/components/landing/modern-ai-roadmap-preview";
 import { ModernAIFAQ } from "@/components/landing/modern-ai-faq";
 import { ModernAIFooter } from "@/components/landing/modern-ai-footer";
@@ -22,7 +22,6 @@ export default function Home() {
           <ModernAIHowItWorks />
           <ModernAIFeatures />
           <ModernAITryDemo />
-          <ModernAITestimonials />
           <ModernAIRoadmapPreview />
           <ModernAIFAQ />
         </main>

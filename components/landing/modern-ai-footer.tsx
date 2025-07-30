@@ -19,7 +19,6 @@ const footerLinks = {
   product: [
     { name: "Features", href: "#features" },
     { name: "How it Works", href: "#how-it-works" },
-    { name: "Pricing", href: "/pricing" },
     { name: "Demo", href: "#demo" },
     { name: "Roadmaps", href: "#roadmaps" }
   ],
@@ -50,7 +49,20 @@ const socialLinks = [
   { name: "Twitter", icon: Twitter, href: "https://twitter.com/interviewai" },
   { name: "GitHub", icon: Github, href: "https://github.com/interviewai" },
   { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/company/interviewai" },
-  { name: "Email", icon: Mail, href: "mailto:hello@interviewai.com" }
+  { name: "Email", icon: Mail, href: "mailto:contact@aithor.in" }
+];
+
+const contactNumbers = [
+  "+91-9876543210",
+  "+91-8765432109",
+  "+91-7654321098",
+  "+91-6543210987",
+  "+91-5432109876",
+  "+91-4321098765",
+  "+91-3210987654",
+  "+91-2109876543",
+  "+91-1098765432",
+  "+91-9087654321"
 ];
 
 export function ModernAIFooter() {
@@ -160,7 +172,7 @@ export function ModernAIFooter() {
                 <Box
                   component="input"
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="Enter your email address"
                   sx={{
                     flex: 1,
                     px: 2,
@@ -249,15 +261,30 @@ export function ModernAIFooter() {
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, color: '#cbd5e1' }}>
                   <MapPin className="w-4 h-4 text-purple-400" />
-                  <Typography variant="body2">San Francisco, CA</Typography>
+                  <Typography variant="body2">Noida, Delhi, India</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, color: '#cbd5e1' }}>
                   <Phone className="w-4 h-4 text-purple-400" />
-                  <Typography variant="body2">+1 (555) 123-4567</Typography>
+                  <Typography variant="body2">{contactNumbers[0]}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, color: '#cbd5e1' }}>
                   <Mail className="w-4 h-4 text-purple-400" />
-                  <Typography variant="body2">hello@interviewai.com</Typography>
+                  <Typography variant="body2">contact@aithor.in</Typography>
+                </Box>
+
+                {/* Additional Contact Numbers */}
+                <Box sx={{ mt: 2 }}>
+                  <Typography variant="body2" sx={{ color: '#94a3b8', mb: 1, fontWeight: 500 }}>
+                    Support Lines:
+                  </Typography>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                    {contactNumbers.slice(1, 4).map((number, index) => (
+                      <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, color: '#cbd5e1' }}>
+                        <Phone className="w-3 h-3 text-purple-400" />
+                        <Typography variant="body2" sx={{ fontSize: '0.875rem' }}>{number}</Typography>
+                      </Box>
+                    ))}
+                  </Box>
                 </Box>
               </Box>
             </Box>
@@ -429,9 +456,9 @@ export function ModernAIFooter() {
             >
               {/* Copyright */}
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, color: '#94a3b8' }}>
-                <Typography variant="body2">© 2024 Interview AI. Made with</Typography>
+                <Typography variant="body2">© 2025 Aithor. Made with</Typography>
                 <Heart className="w-4 h-4 text-red-500 fill-current" />
-                <Typography variant="body2">for job seekers worldwide.</Typography>
+                <Typography variant="body2">for job seekers in India and beyond.</Typography>
               </Box>
 
               {/* Social Links */}
